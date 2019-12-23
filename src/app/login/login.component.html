@@ -1,0 +1,21 @@
+<div class="container col-5">
+  <div class="form-group">
+    <label>Email Address</label>
+    <input
+      [(ngModel)]="email"
+      class="form-control"
+      type="email"
+      placeholder="Email giriniz..."
+    />
+  </div>
+  <div class="form-group">
+    <label>Şifre</label>
+    <input
+      [(ngModel)]="password"
+      class="form-control"
+      type="password"
+      placeholder="Şifre giriniz..."
+    />
+  </div>
+  <button (click)="login()" class="btn btn-success">Giriş Yap</button>
+</div>
