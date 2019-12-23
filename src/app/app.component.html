@@ -1,0 +1,15 @@
+<div class="alignItems">angular basladı</div>
+<div>
+  {{name}}
+</div>
+<div>
+  <button (click)="incrementNumber()">Artır</button>
+  Versiyon numarası: {{version}}
+</div>
+<div>
+  <button (click)="generateUser()">Kullanıcı Yarat</button>
+  <br>
+  Kullanıcı: {{user != null ? user.name : 'Kullanıcı Yok'}}
+  <br>
+  Kullanıcı Tipi: {{userType?.name}}
+</div>
