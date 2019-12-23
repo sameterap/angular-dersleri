@@ -1,0 +1,11 @@
+<div class="text-center mb-3">
+  {{ data }}
+  <div *ngIf="data">
+    <button (click)="setDropdown()">Set DropDown</button>
+  </div>
+  <select class="mt-2" (change)="sendData()" [(ngModel)]='selectedOption'>
+    <option *ngFor="let data of dataSource" [value]="data.value">
+      {{ data.display }}
+    </option>
+  </select>
+</div>

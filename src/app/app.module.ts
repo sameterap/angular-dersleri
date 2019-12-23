@@ -5,12 +5,16 @@ import { FormsModule} from '@angular/forms';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { GirisComponent } from './giris/giris.component';
+import { ParentComponent } from './components/parent/parent.component';
+import { ChildComponent } from './components/child/child.component';
 
 @NgModule({
    declarations: [
       AppComponent,
       LoginComponent,
-      GirisComponent
+      GirisComponent,
+      ParentComponent,
+      ChildComponent
    ],
    imports: [
       BrowserModule,
