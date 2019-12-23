@@ -7,6 +7,8 @@ import { LoginComponent } from './login/login.component';
 import { GirisComponent } from './giris/giris.component';
 import { ParentComponent } from './components/parent/parent.component';
 import { ChildComponent } from './components/child/child.component';
+import { ComponentLeftComponent } from './components/component-left/component-left.component';
+import { ComponentRightComponent } from './components/component-right/component-right.component';
 
 @NgModule({
    declarations: [
@@ -14,7 +16,9 @@ import { ChildComponent } from './components/child/child.component';
       LoginComponent,
       GirisComponent,
       ParentComponent,
-      ChildComponent
+      ChildComponent,
+      ComponentLeftComponent,
+      ComponentRightComponent
    ],
    imports: [
       BrowserModule,
