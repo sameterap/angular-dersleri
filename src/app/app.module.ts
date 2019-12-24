@@ -10,6 +10,7 @@ import { ChildComponent } from './components/child/child.component';
 import { ComponentLeftComponent } from './components/component-left/component-left.component';
 import { ComponentRightComponent } from './components/component-right/component-right.component';
 import { ButtonComponent } from './components/button/button.component';
+import { HasRoleDirective } from './directives/hasRole.directive';
 
 @NgModule({
    declarations: [
@@ -20,7 +21,8 @@ import { ButtonComponent } from './components/button/button.component';
       ChildComponent,
       ComponentLeftComponent,
       ComponentRightComponent,
-      ButtonComponent
+      ButtonComponent,
+      HasRoleDirective
    ],
    imports: [
       BrowserModule,
