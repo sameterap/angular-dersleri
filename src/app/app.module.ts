@@ -11,6 +11,13 @@ import { ComponentLeftComponent } from './components/component-left/component-le
 import { ComponentRightComponent } from './components/component-right/component-right.component';
 import { ButtonComponent } from './components/button/button.component';
 import { HasRoleDirective } from './directives/hasRole.directive';
+import { HomeComponent } from './components/home/home.component';
+import { UserListComponent } from './components/user-list/user-list.component';
+import { FormComponent } from './components/form/form.component';
+import { RouterModule } from '@angular/router';
+import { appRoutes } from './routes';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { UserComponent } from './components/user/user.component';
 
 @NgModule({
    declarations: [
@@ -22,11 +29,17 @@ import { HasRoleDirective } from './directives/hasRole.directive';
       ComponentLeftComponent,
       ComponentRightComponent,
       ButtonComponent,
-      HasRoleDirective
+      HasRoleDirective,
+      HomeComponent,
+      UserListComponent,
+      FormComponent,
+      NavbarComponent,
+      UserComponent
    ],
    imports: [
       BrowserModule,
-      FormsModule
+      FormsModule,
+      RouterModule.forRoot(appRoutes)
    ],
    providers: [],
    bootstrap: [
