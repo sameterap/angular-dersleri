@@ -9,6 +9,7 @@ import { ParentComponent } from './components/parent/parent.component';
 import { ChildComponent } from './components/child/child.component';
 import { ComponentLeftComponent } from './components/component-left/component-left.component';
 import { ComponentRightComponent } from './components/component-right/component-right.component';
+import { ButtonComponent } from './components/button/button.component';
 
 @NgModule({
    declarations: [
@@ -18,7 +19,8 @@ import { ComponentRightComponent } from './components/component-right/component-
       ParentComponent,
       ChildComponent,
       ComponentLeftComponent,
-      ComponentRightComponent
+      ComponentRightComponent,
+      ButtonComponent
    ],
    imports: [
       BrowserModule,
