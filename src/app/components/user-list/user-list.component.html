@@ -1,3 +1,23 @@
-<p>
-  user-list works!
-</p>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Kullanıcı Adı</th>
+      <th>Kullanıcı Nick Name</th>
+      <th>Email</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users">
+      <td>{{ user.name }}</td>
+      <td>{{ user.username }}</td>
+      <td>{{ user.email }}</td>
+      <td>
+        <a class="btn btn-primary" [routerLink]="['/users', user.id]"
+          >1. View</a
+        >
+        <button class="btn btn-info ml-2" (click)="goToDetail(user.id)">2. View</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

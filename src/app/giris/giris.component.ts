@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { User, UserType } from '../model/user.type';
+// import { User, UserType } from '../model/user-giris.type';
 
 @Component({
   selector: 'app-giris',
@@ -14,23 +14,23 @@ export class GirisComponent implements OnInit {
 
   name = 'atilim-app';
 
-  version = 0;
-  user: User;
-  userType: UserType;
+   version = 0;
+  // user: User;
+  // userType: UserType;
 
   incrementNumber() {
     this.version++;
   }
 
   generateUser() {
-    this.user = {
-      id: 1,
-      name: 'Atılım'
-    };
+    // this.user = {
+    //   id: 1,
+    //   name: 'Atılım'
+    // };
 
-    const userTypeName = new UserType('Admin');
+    // const userTypeName = new UserType('Admin');
 
-    this.userType = userTypeName;
+    // this.userType = userTypeName;
   }
 
 }

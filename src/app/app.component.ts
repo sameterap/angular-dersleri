@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { User, UserType } from './model/user.type';
+import { User, UserType } from './model/user-giris.type';
 
 @Component({
   // encapsulation: ViewEncapsulation.None,

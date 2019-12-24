@@ -18,6 +18,7 @@ import { RouterModule } from '@angular/router';
 import { appRoutes } from './routes';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { UserComponent } from './components/user/user.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
    declarations: [
@@ -39,6 +40,7 @@ import { UserComponent } from './components/user/user.component';
    imports: [
       BrowserModule,
       FormsModule,
+      HttpClientModule,
       RouterModule.forRoot(appRoutes)
    ],
    providers: [],
