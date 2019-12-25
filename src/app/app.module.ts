@@ -22,6 +22,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { UserListResolver } from './resolvers/user-list.resolver';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PaginationModule } from 'ngx-bootstrap';
+import { DenemeModule } from './modules/denemeModule/deneme.module';
 
 @NgModule({
    declarations: [
@@ -45,6 +46,7 @@ import { PaginationModule } from 'ngx-bootstrap';
       FormsModule,
       ReactiveFormsModule,
       HttpClientModule,
+      DenemeModule,
       PaginationModule.forRoot(),
       BrowserAnimationsModule,
       RouterModule.forRoot(appRoutes),
