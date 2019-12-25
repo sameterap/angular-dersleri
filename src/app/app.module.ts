@@ -20,6 +20,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { UserComponent } from './components/user/user.component';
 import { HttpClientModule } from '@angular/common/http';
 import { UserListResolver } from './resolvers/user-list.resolver';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { PaginationModule } from 'ngx-bootstrap';
 
 @NgModule({
    declarations: [
@@ -42,7 +44,9 @@ import { UserListResolver } from './resolvers/user-list.resolver';
       BrowserModule,
       FormsModule,
       HttpClientModule,
-      RouterModule.forRoot(appRoutes)
+      PaginationModule.forRoot(),
+      BrowserAnimationsModule,
+      RouterModule.forRoot(appRoutes),
    ],
    providers: [
      UserListResolver

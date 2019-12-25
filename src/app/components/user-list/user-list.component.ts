@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { User } from 'src/app/model/user';
 import { Router, ActivatedRoute } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
+import { Pagination, PaginatedResult } from 'src/app/model/pagination';
 
 @Component({
   selector: 'app-user-list',
@@ -12,6 +13,14 @@ import { UserService } from 'src/app/services/user.service';
 export class UserListComponent implements OnInit {
 
   users: User[];
+
+  pagination: Pagination = {
+    totalItems: 30,
+    currentPage: 2,
+    itemsPerPage: 5,
+    totalPages: 10
+  };
+
   constructor(
     private http: HttpClient,
     private router: Router,
@@ -35,6 +44,17 @@ export class UserListComponent implements OnInit {
 
   goToDetail(id: number) {
     this.router.navigate(['/users', id]);
+  }
+
+  pageChanged(event: any) {
+    this.pagination.currentPage = event.page;
+    console.log(this.pagination.currentPage);
+
+    this.userService.getUsersWithPagination(this.pagination.currentPage, this.pagination.itemsPerPage)
+      .subscribe((res: PaginatedResult<User[]>) => {
+        this.users = res.result;
+        this.pagination = res.pagination;
+      });
   }
 
 }
