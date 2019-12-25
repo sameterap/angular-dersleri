@@ -19,6 +19,7 @@ import { appRoutes } from './routes';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { UserComponent } from './components/user/user.component';
 import { HttpClientModule } from '@angular/common/http';
+import { UserListResolver } from './resolvers/user-list.resolver';
 
 @NgModule({
    declarations: [
@@ -43,7 +44,9 @@ import { HttpClientModule } from '@angular/common/http';
       HttpClientModule,
       RouterModule.forRoot(appRoutes)
    ],
-   providers: [],
+   providers: [
+     UserListResolver
+   ],
    bootstrap: [
       AppComponent
    ]
