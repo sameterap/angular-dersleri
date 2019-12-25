@@ -28,6 +28,12 @@ export class UserComponent implements OnInit, OnDestroy {
     });
 
 
+    // Query Strşng parameter şle gelen data
+    // this.route.queryParams.subscribe(params=> {
+    //   console.log(params['order']) ;
+    // });
+
+
     // this.http.get(`https://jsonplaceholder.typicode.com/users/${this.id}`)
     //   .subscribe((user: User) => {
     //     this.user = user;
@@ -36,6 +42,8 @@ export class UserComponent implements OnInit, OnDestroy {
     this.userService.getUserById(this.id).subscribe((data: User) => {
       this.user = data;
     });
+
+
 
   }
 

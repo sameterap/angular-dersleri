@@ -44,6 +44,9 @@ export class UserListComponent implements OnInit {
 
   goToDetail(id: number) {
     this.router.navigate(['/users', id]);
+
+    // Query string eklemek için yapılan navigation
+    //this.router.navigate(['/users'], { queryParams: { order: 'popular' } });
   }
 
   pageChanged(event: any) {
