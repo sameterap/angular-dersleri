@@ -1,3 +1,71 @@
-<p>
-  form works!
-</p>
+<div class="container">
+  <form [formGroup]="userForm">
+    <div class="form-group">
+      <label>
+        Adı:
+      </label>
+      <input class="form-control" type="text" formControlName="firstName" />
+      <pre
+        *ngIf="userForm.controls['firstName'].invalid"
+      ><span class="text-danger">Boş geçilemez</span></pre>
+    </div>
+    <div class="form-group">
+      <label>
+        Soyadı:
+      </label>
+      <input class="form-control" type="text" formControlName="lastName" />
+    </div>
+    <div class="form-group">
+      <label>
+        Şifre:
+      </label>
+      <input class="form-control" type="password" formControlName="password" />
+    </div>
+    <div class="form-group">
+      <label>
+        Şifre Doğrula:
+      </label>
+      <input
+        class="form-control"
+        type="password"
+        formControlName="confirmpassword"
+      />
+    </div>
+    <div formGroupName="address">
+      <h3>Adres</h3>
+
+      <div class="form-group">
+        <label>
+          Cadde:
+        </label>
+        <input class="form-control" type="text" formControlName="street" />
+      </div>
+      <div class="form-group">
+        <label>
+          Şehir:
+        </label>
+        <input class="form-control" type="text" formControlName="city" />
+      </div>
+    </div>
+    <div formArrayName="additional">
+      <h3>Ek Bilgiler</h3>
+      <button (click)="addAdditional()">Ek Bilgi Ekle</button>
+
+      <div *ngFor="let address of additionalArray.controls; let i = index">
+        <label>
+          Bilgi:
+        </label>
+        <input type="text" class="form-control" [formControlName]="i" />
+      </div>
+    </div>
+  </form>
+</div>
+<div class="container mt-2">
+  <p>
+    <button [disabled]="!userForm.valid" class="btn btn-primary">Kaydet</button>
+    <button class="btn btn-warning ml-2" (click)="getData()">Data Al</button>
+    <button class="btn btn-success ml-2" (click)="clearData()">Temizle</button>
+  </p>
+</div>
+<p>Form Value: {{ userForm.value | json }}</p>
+<p>Form Status: {{ userForm.status }}</p>
