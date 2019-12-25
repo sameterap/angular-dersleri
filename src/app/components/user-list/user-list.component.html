@@ -1,4 +1,6 @@
-<table class="table table-striped">
+<div *ngIf="!users"> loading </div>
+
+<table *ngIf="users"  class="table table-striped">
   <thead>
     <tr>
       <th>Kullanıcı Adı</th>

@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { User } from 'src/app/model/user';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-user',
@@ -15,7 +16,7 @@ export class UserComponent implements OnInit, OnDestroy {
   user: User;
   subscribtion: Subscription;
   token: string;
-  constructor(private http: HttpClient, private route: ActivatedRoute) { }
+  constructor(private http: HttpClient, private route: ActivatedRoute, private userService: UserService) { }
 
   ngOnInit() {
 
@@ -27,10 +28,14 @@ export class UserComponent implements OnInit, OnDestroy {
     });
 
 
-    this.http.get(`https://jsonplaceholder.typicode.com/users/${this.id}`)
-      .subscribe((user: User) => {
-        this.user = user;
-      });
+    // this.http.get(`https://jsonplaceholder.typicode.com/users/${this.id}`)
+    //   .subscribe((user: User) => {
+    //     this.user = user;
+    //   });
+
+    this.userService.getUserById(this.id).subscribe((data: User) => {
+      this.user = data;
+    });
 
   }
 
