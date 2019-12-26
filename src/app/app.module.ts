@@ -23,6 +23,8 @@ import { UserListResolver } from './resolvers/user-list.resolver';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PaginationModule } from 'ngx-bootstrap';
 import { DenemeModule } from './modules/denemeModule/deneme.module';
+import { FileUploaderComponent } from './components/file-uploader/file-uploader.component';
+import { FileUploadModule } from 'ng2-file-upload';
 
 @NgModule({
    declarations: [
@@ -39,11 +41,13 @@ import { DenemeModule } from './modules/denemeModule/deneme.module';
       UserListComponent,
       FormComponent,
       NavbarComponent,
-      UserComponent
+      UserComponent,
+      FileUploaderComponent
    ],
    imports: [
       BrowserModule,
       FormsModule,
+      FileUploadModule,
       ReactiveFormsModule,
       HttpClientModule,
       DenemeModule,
