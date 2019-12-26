@@ -6,6 +6,8 @@ import { UserComponent } from './components/user/user.component';
 import { UserListResolver } from './resolvers/user-list.resolver';
 
 export const appRoutes: Routes = [
+  { path: 'lazy', loadChildren: () => import('./modules/LazyModule/lazydeneme/lazydeneme.module')
+  .then(m => m.LazydenemeModule) },
   { path: '', component: HomeComponent },
   {
     path: '',

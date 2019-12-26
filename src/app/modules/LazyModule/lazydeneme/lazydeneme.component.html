@@ -1,0 +1,11 @@
+<div class="container">
+  <label [ngClass]="value ? 'color-green' : 'color-red'">Lazy Loading Works</label>
+  <br>
+  <button class="btn btn-primary" (click)="changeColor()">Renk Değiştir</button>
+  <hr>
+  <input type="text" class="form-control" [formControl]="firstName">
+  <pre>{{firstName.value}}</pre>
+  <pre>{{firstName.valid}}</pre>
+  <br>
+  <button (click)="updateInput()">İçerik Güncelle</button>
+</div>
