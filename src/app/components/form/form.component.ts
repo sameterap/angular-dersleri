@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, HostListener } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormArray } from '@angular/forms';
 import { debounceTime, takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
@@ -18,6 +18,14 @@ export class FormComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.prepareForm();
     this.listenChanges();
+  }
+
+  // browser kapatmaları için bunu ekledik. host'u yani broswer'ı dinleyecek
+  @HostListener('window:beforeunload', ['$event'])
+  unloadNotification($event: any) {
+    if (this.userForm.dirty) {
+      $event.returnValue = true;
+    }
   }
 
   prepareForm() {
