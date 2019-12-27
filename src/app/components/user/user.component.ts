@@ -1,22 +1,36 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, AfterViewInit, ElementRef, ViewChild } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { User } from 'src/app/model/user';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { UserService } from 'src/app/services/user.service';
+import { ButtonComponent } from '../button/button.component';
 
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
   styleUrls: ['./user.component.css']
 })
-export class UserComponent implements OnInit, OnDestroy {
-
+export class UserComponent implements OnInit, OnDestroy, AfterViewInit {
+  @ViewChild('pRef', { static: false }) pRef: ElementRef;
+  @ViewChild('appBtn', { static: false }) appBtn: ButtonComponent;
   id: number;
   user: User;
   subscribtion: Subscription;
   token: string;
+
+  dateTime = new Date();
+
   constructor(private http: HttpClient, private route: ActivatedRoute, private userService: UserService) { }
+
+
+  ngAfterViewInit() {
+
+    console.log(this.pRef.nativeElement.innerHTML);
+    this.pRef.nativeElement.innerHTML = 'Değiştirdik';
+
+    this.appBtn.text = 'Deneme';
+  }
 
   ngOnInit() {
 
